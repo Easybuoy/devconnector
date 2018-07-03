@@ -98,5 +98,9 @@ if(req.body.handle) profileFields.handle = req.body.handle;
 
 }); 
 
+// @route   GET api/profile/handle/: 
+//@desc     Create or Edit user profile
+//@access   Private
+
 
 module.exports = router;
