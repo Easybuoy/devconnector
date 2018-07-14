@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const app = express();
 const bodyParser = require('body-parser');
 
@@ -25,13 +26,19 @@ console.log('mongodb connected');
     console.log('unable to connect to mongdb', err)
 });
 
+//Passport middlewaare
+app.use(passport.initialize());
+
+// Passport Config
+require('./config/passport')(passport);
+
 app.get('/', (req, res) => {
 
 });
 
 //using routes
 app.use('/api/users',users);
-app.use('/api/users',profile);
+app.use('/api/profile',profile);
 app.use('/api/users',posts);
 
 const port = process.env.PORT || 3000;
