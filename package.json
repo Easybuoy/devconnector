@@ -4,8 +4,11 @@
   "description": "Developers Social Network",
   "main": "app.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node app.js",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Ekunola Ezekiel",
   "license": "MIT",
