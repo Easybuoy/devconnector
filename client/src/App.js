@@ -24,6 +24,7 @@ if(localStorage.jwtToken){
 
   //Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
+  // console.log(decoded);
   //Set user and is authenticated
   store.dispatch(setCurrentUser(decoded));
 
@@ -55,7 +56,7 @@ class App extends Component {
       <div className="container">
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        {/* <Route exact path="/dashboard" component={Dashboard} /> */}
 
       </div>
        <Footer />
