@@ -53,6 +53,7 @@ if(process.env.NODE_ENV === 'production'){
     });
 }
 
+console.log(process.env);
 
 const port = process.env.PORT || 4000;
 
